@@ -1,11 +1,22 @@
 from modules.output import *
 from modules.task_list import *
+from modules.input import *
 
-
+while(True):
+    data_import = input("Do you want to load existing tasks? Y or N (press Q to quit): ").upper()
+    if data_import == "Y":
+        from data.task_list import *
+        break
+    elif data_import == "N":
+        tasks = []
+        break
+    elif data_import == 'Q':
+        quit()
 
 while (True):
     print_menu()
-    option = input("Select an option 1, 2, 3, 4, 5, display (m)enu or (q)uit: ")
+    # option = input("Select an option 1, 2, 3, 4, 5, display (m)enu or (q)uit: ")
+    option = user_input()
     if (option.lower() == 'q'):
         break
     if option == '1':
